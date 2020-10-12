@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { View, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import { Icon, Text } from 'native-base'
 import { LinearGradient } from 'expo-linear-gradient'
+import { Actions } from 'react-native-router-flux';
 
 export default class Home extends Component {
     state = {
@@ -9,17 +10,22 @@ export default class Home extends Component {
     };
 
     renderCard() {
-        return <View style={styles.card}>
+        return (
+        <TouchableOpacity 
+        style={styles.card}
+        onPress={() => Actions.transfer()}
+        >
             <Text style={{ fontSize: 14 }}>Pide un Prestamo</Text>
             <Image style={{ height: 80, width: 90, resizeMode: 'contain' }} source={require('../common/people.png')} />
-        </View>
+        </TouchableOpacity>
+        )
     }
 
     renderCarrousel() {
         return (
-            <TouchableOpacity
+            <View
                 style={styles.carousel}
-                onPress={() => { }}
+                
             >
                 <View>
                     <Text style={styles.carousel_text}>Recarga</Text>
@@ -27,7 +33,7 @@ export default class Home extends Component {
                     <Text style={styles.carousel_text}>B71Q7396</Text>
                 </View>
                 <Image stryle={{ height: 70, width: 70, resizeMode: 'contain' }} source={require('../common/movistar.png')} />
-            </TouchableOpacity>
+            </View>
         )
     }
     render() {

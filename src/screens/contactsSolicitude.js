@@ -3,6 +3,7 @@ import { View, Image, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Icon } from 'native-base'
 import * as Animatable from 'react-native-animatable'
 import {LinearGradient} from 'expo-linear-gradient'
+import { Actions } from 'react-native-router-flux';
 
 
 
@@ -22,7 +23,7 @@ export default class ContactsSolicitude extends Component {
                     </TouchableOpacity>
                     <Text style={styles.text}>Encuentra tus contactos más rápido aceptando el acceso a la agenda</Text>
                     <View style={styles.button_container}>
-                        <TouchableOpacity style={styles.button}>
+                        <TouchableOpacity style={styles.button} onPress={() => Actions.login()}>
                             <Text style={styles.button_text}>Permitir Acceso</Text>
                         </TouchableOpacity>
                     </View>

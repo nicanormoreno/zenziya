@@ -4,8 +4,8 @@ import { View, StyleSheet, TouchableOpacity } from 'react-native'
 import { Icon, Text, Grid, Col, Row, } from 'native-base'
 import { } from 'redux-form'
 import _ from 'lodash'
-import * as Device from 'expo-device'
 import {LinearGradient} from 'expo-linear-gradient'
+import { Actions } from 'react-native-router-flux'
 
 
 export default class LoginScreen extends Component {
@@ -14,22 +14,6 @@ export default class LoginScreen extends Component {
         this.state = {
             password: ''
         }
-        console.log('-brand:  ', Device.brand)
-        console.log('-manufacturer:  ', Device.manufacturer)
-        console.log('-modelName:  ', Device.modelName)
-        console.log('-modelId:  ', Device.modelId)
-        console.log('-designName:  ', Device.designName)
-        console.log('-productName:  ', Device.productName)
-        console.log('-deviceYearClass:  ', Device.deviceYearClass)
-        console.log('-totalMemory:  ', Device.totalMemory)
-        console.log('-supportedCpuArchitectures:  ', Device.supportedCpuArchitectures)
-        console.log('-osName:  ', Device.osName)
-        console.log('-osVersion:  ', Device.osVersion)
-        console.log('-osBuildId:  ', Device.osBuildId)
-        console.log('-osInternalBuildId:  ', Device.osInternalBuildId)
-        console.log('-osBuildFingerprint:  ', Device.osBuildFingerprint)
-        console.log('-platformApiLevel:  ', Device.platformApiLevel)
-        console.log('-deviceName:  ', Device.deviceName)
     }
 
 
@@ -94,13 +78,16 @@ export default class LoginScreen extends Component {
         _.map(this.state.password, ((char, index) => {
             dots[index] = char;
         }))
+        if(this.state.password.length >= 4 ){
+            Actions.home()
+        }
         return (
             <View style={styles.password}>
                 {
-                    dots.map(dot => {
+                    dots.map((dot, index) => {
                         return dot === null
-                            ? <Text style={styles.password_text}>{'_'}</Text>
-                            : <Text style={styles.password_text}>{'*'}</Text>
+                            ? <Text key={index} style={styles.password_text}>{'_'}</Text>
+                            : <Text key={index} style={styles.password_text}>{'*'}</Text>
                     })
                 }
             </View>

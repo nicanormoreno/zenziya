@@ -21,7 +21,6 @@ export default class CarouselLayout extends Component {
     
     render(){
         const {img, title, text} = this.state
-        console.log(img, title, text)
         return (
             <View style = {styles.container}>
                 {

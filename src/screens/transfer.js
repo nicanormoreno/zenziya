@@ -77,7 +77,7 @@ export default class Transfer extends Component {
     writeAmount(number) {
         let amount = this.state.amount;
         if (number) {
-            amount.length < 4 ? amount = amount + number.toString() : null
+             amount = amount + number.toString();
         } else {
             amount.length > 0 ? amount = amount.substring(0, amount.length - 1) : null
         }

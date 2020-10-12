@@ -11,22 +11,12 @@ import SelfieOpenCamera from './src/screens/selfieOpenCamera'
 import CredentialOpenCamera from './src/screens/credentialOpenCamera'
 import Home from './src/screens/home'
 import Transfer from './src/screens/transfer'
+import Router from './src/Router'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" /> */}
-      {/* <Scree1/> */}
-      {/* <Carousel/> */}
-      {/* <ContactsSolucitude /> */}
-      {/* <LoginScreen/> */}
-      {/* <Selfie /> */}
-      {/* <CredentialPicture /> */}
-      {/* <SelfieOpenCamera /> */}
-      {/* <CredentialOpenCamera/> */}
-      {/* <Home/> */}
-      <Transfer/>
+      <Router/>
     </View>
   );
 }

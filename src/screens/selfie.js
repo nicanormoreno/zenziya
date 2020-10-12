@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View, StyleSheet, TouchableOpacity } from 'react-native'
 import { Icon, Text, Grid, Col, Row } from 'native-base'
+import { Actions } from 'react-native-router-flux';
 
 
 export default class Selfie extends Component {
@@ -19,7 +20,7 @@ export default class Selfie extends Component {
                     <Text style={styles.recomendations}>- Evista usar accesorios en tu rostro</Text>
                     <Text style={styles.recomendations}>- Pon el celular a la antura de los ojos</Text>
                     <Text style={styles.recomendations}>- Busca un lugar silencioso y bien iluminado</Text>
-                    <TouchableOpacity style = {styles.button}>
+                    <TouchableOpacity style = {styles.button} onPress={()=> Actions.selfieOpenCamera()}>
                         <Text style={styles.button_text}>Siguiente</Text>
                     </TouchableOpacity>
                 </View>
