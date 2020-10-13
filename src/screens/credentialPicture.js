@@ -1,13 +1,15 @@
 import React, {Component} from 'react'
-import {View, Image, StyleSheet, TouchableOpacity } from 'react-native'
+import {View, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native'
 import {Icon, Text} from 'native-base'
 import { Actions } from 'react-native-router-flux';
+import L from '../common/Layout'
 
 
 export default class CredentialPicture extends Component {
     render() {
         return (
             <View style={styles.body}>
+                <ScrollView>
                  <Icon name='arrow-back' style={styles.icon} />
                  <View style={styles.card}>
                      <Text style={styles.text}>Encuadra el frente de tu cédula con el recuadro</Text>
@@ -20,6 +22,7 @@ export default class CredentialPicture extends Component {
                  <TouchableOpacity style = {styles.button} onPress={()=> Actions.credentialOpenCamera()}>
                         <Text style={styles.button_text}>Siguiente</Text>
                     </TouchableOpacity>
+                    </ScrollView>
             </View>
         )
     }
@@ -27,10 +30,10 @@ export default class CredentialPicture extends Component {
 
 const styles = StyleSheet.create({
     text:{
-        fontSize:21,
+        fontSize:L.h(16),
         color:'#FFF',
         textAlign:'center',
-        marginVertical: 20
+        marginVertical: L.h(16)
     },
     icon: {
         fontSize: 30,
@@ -39,12 +42,10 @@ const styles = StyleSheet.create({
     image: {
         resizeMode: 'cover',
         width: '100%',
-        height: 200,
-        marginBottom: 30
+        height: L.h(200),
+        marginBottom: L.h(30)
     },
     body: {
-        marginTop: 35,
-        marginTop: 35,
         width: '100%',
         height: '100%',
         backgroundColor: 'black',
@@ -57,15 +58,15 @@ const styles = StyleSheet.create({
         marginHorizontal: 10
     },
     button: {
-        marginTop:50,
+        marginTop:L.h(30),
         borderRadius: 20,
         justifyContent: 'center',
         alignItems: 'center',
-        paddingVertical:12,
+        paddingVertical:L.h(8),
         backgroundColor: 'rgba(255, 170, 255, 0.5)'
     },
     button_text: {
         color: '#FFF',
-        fontSize: 16
+        fontSize: L.h(14)
     }
 })

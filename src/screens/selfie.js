@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
-import { View, StyleSheet, TouchableOpacity } from 'react-native'
-import { Icon, Text, Grid, Col, Row } from 'native-base'
+import { View, StyleSheet, TouchableOpacity, ScrollView, SafeAreaView} from 'react-native'
+import { Icon, Text } from 'native-base'
+import {responsiveFontSize as rf, responsiveHeight as rh, responsiveScreenWidth as rw} from 'react-native-responsive-dimensions'
+import L from '../common/Layout'
 import { Actions } from 'react-native-router-flux';
 
 
 export default class Selfie extends Component {
     render() {
         return (
-            <View style={styles.body}>
+            <View style={{flex:1}}>
+            <ScrollView style={styles.body}>
                 <Icon name='arrow-back' style={styles.icon} />
                 <View style={styles.card}>
                     <Text style={styles.title}>Ahora necesitamos que te tomes una Selfie</Text>
@@ -24,6 +27,7 @@ export default class Selfie extends Component {
                         <Text style={styles.button_text}>Siguiente</Text>
                     </TouchableOpacity>
                 </View>
+            </ScrollView>
             </View>
         )
     }
@@ -31,68 +35,67 @@ export default class Selfie extends Component {
 
 const styles = StyleSheet.create({
     body: {
-        marginTop: 35,
-        marginTop: 35,
+        flex:1,
         width: '100%',
-        height: '100%',
         backgroundColor: 'black',
-        paddingTop: 30,
-        paddingHorizontal: 30,
-        paddingBottom: 30
+        paddingTop: L.h(30),
+        paddingHorizontal: L.h(30),
+        paddingBottom: L.h(300)
     },
     icon: {
-        fontSize: 30,
+        fontSize: L.h(30),
         color: '#FFF'
     },
     icon_container: {
         position: 'relative',
-        marginVertical: 15,
-         height: 230,
+        marginVertical: L.h(10),
+        height: L.h(230),
         justifyContent: 'center',
         alignItems: 'center'
     },
     external_icon: {
-        fontSize: 230,
+        fontSize: L.h(230),
         color: '#FFF',
         position: 'absolute'
     },
     internal_icon: {
-        fontSize: 110,
+        fontSize: L.h(110),
         color: '#FFF',
         position: 'absolute'
     },
     card: {
-        marginTop: 20,
-        marginHorizontal: 10
+        marginTop: L.h(16),
+        marginHorizontal: L.h(8),
+        justifyContent:'center'
     },
     title: {
         color: '#FFF',
         fontWeight: 'bold',
-        fontSize: 25,
-        marginBottom: 20,
+        fontSize: L.h(20),
+        marginBottom: L.h(20),
         textAlign: 'center'
     },
     text: {
         color: '#CCC',
-        fontSize: 14,
+        fontSize: L.h(12),
         textAlign: 'center',
-        marginHorizontal: 10
+        marginHorizontal: L.h(8)
     },
     recomendations: {
         color: '#CCC',
-        fontSize: 12,
-        marginBottom: 10
+        fontSize: L.h(12),
+        marginBottom: L.h(6)
     },
     button: {
-        marginTop:50,
-        borderRadius: 20,
+        marginTop:L.h(30),
+        borderRadius: L.h(20),
         justifyContent: 'center',
         alignItems: 'center',
-        paddingVertical:12,
+        paddingVertical:L.h(6),
         backgroundColor: 'rgba(255, 170, 255, 0.5)'
     },
     button_text: {
         color: '#FFF',
-        fontSize: 16
+        fontSize: L.h(12)
     }
 })

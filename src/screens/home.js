@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import { View, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native'
 import { Icon, Text } from 'native-base'
 import { LinearGradient } from 'expo-linear-gradient'
 import { Actions } from 'react-native-router-flux';
@@ -25,7 +25,6 @@ export default class Home extends Component {
         return (
             <View
                 style={styles.carousel}
-                
             >
                 <View>
                     <Text style={styles.carousel_text}>Recarga</Text>
@@ -57,6 +56,7 @@ export default class Home extends Component {
                         <Text>QR</Text>
                     </View>
                 </LinearGradient>
+                <ScrollView>
                 <View>
                     {this.renderCarrousel()}
                 </View>
@@ -72,6 +72,7 @@ export default class Home extends Component {
                     {this.renderCard()}
                     {this.renderCard()}
                 </View>
+                </ScrollView>
             </View>
         )
     }

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { View, Image, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Image, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { Icon } from 'native-base'
 import * as Animatable from 'react-native-animatable'
 import {LinearGradient} from 'expo-linear-gradient'
 import { Actions } from 'react-native-router-flux';
+import L from '../common/Layout'
 
 
 
@@ -72,7 +73,7 @@ const styles = StyleSheet.create({
     text: {
         marginHorizontal: 15,
         marginTop: 30,
-        fontSize: 23,
+        fontSize: L.h(18),
         color: '#FFF'
     }
 })

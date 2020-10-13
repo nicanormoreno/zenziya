@@ -15,8 +15,7 @@ export default class LoginScreen extends Component {
             password: ''
         }
     }
-
-
+    
     renderKeyboard() {
         return (
             <Grid style={{}}>
