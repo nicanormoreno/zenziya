@@ -12,6 +12,7 @@ import SelfieOpenCamera from './screens/selfieOpenCamera'
 import CredentialOpenCamera from './screens/credentialOpenCamera'
 import Home from './screens/home'
 import Transfer from './screens/transfer'
+import Farewell from './screens/farewell'
 
 const onBackAndroid = () => {
     console.log(
@@ -33,6 +34,7 @@ export default RouterComponent = () => {
                 <Scene key="login" component={Login} />
                 <Scene key="home" component={Home} />
                 <Scene key="transfer" component={Transfer} />
+                <Scene key="farewell" component={Farewell} />
             </Scene>
         </Router>
     )
