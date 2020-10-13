@@ -25,12 +25,12 @@ export default RouterComponent = () => {
     return (
         <Router backAndroidHandler={onBackAndroid}>
             <Scene key="root" hideNavBar>
-                {/* <Scene key="selfie" component={Selfie} />
-                <Scene key="selfieOpenCamera" component={SelfieOpenCamera} /> */}
-                {/* <Scene key="credentialPicture" component={CredentialPicture} />
-                <Scene key="credentialOpenCamera" component={CredentialOpenCamera} /> */}
-                {/* <Scene key="contactsSolucitude" component={ContactsSolucitude} />
-                <Scene key="login"  component={Login} /> */}
+                <Scene key="selfie" component={Selfie} />
+                <Scene key="selfieOpenCamera" component={SelfieOpenCamera} />
+                <Scene key="credentialPicture" component={CredentialPicture} />
+                <Scene key="credentialOpenCamera" component={CredentialOpenCamera} />
+                <Scene key="contactsSolucitude" component={ContactsSolucitude} />
+                <Scene key="login" component={Login} />
                 <Scene key="home" component={Home} />
                 <Scene key="transfer" component={Transfer} />
             </Scene>
